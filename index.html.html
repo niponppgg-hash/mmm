@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(사)안양여성의전화 - 모든 여성의 인권이 존중받는 사회를 향해</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#F9F9FB',       /* 아이보리 화이트 */
+                            dark: '#111111',     /* 딥 블랙 */
+                            gray: '#4A4A4A',     /* 다크 그레이 */
+                            purple: '#6B21A8',   /* 바이올렛 */
+                            orange: '#F07824',   /* 포인트 주황색 */
+                            lightOrange: '#FFF0E5', /* 연한 주황색 */
+                            acidLime: '#E4F838', /* 에디토리얼 모던 레트로 아시드 포인트 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Gothic A1"', 'sans-serif'],
+                        title: ['"Black Han Sans"', '"Gothic A1"', 'sans-serif'],
+                        editorial: ['"Syne"', '"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9F9FB;
+            color: #111111;
+            font-family: 'Gothic A1', sans-serif;
+            word-break: keep-all;
+        }
+
+        /* Modern Retro Gradient Mesh Backdrop */
+        .editorial-hero-bg {
+            background: linear-gradient(135deg, #FFF0E5 0%, #F9F9FB 40%, #E2C5F8 80%, #F07824 100%);
+        }
+
+        .editorial-mesh {
+            background: radial-gradient(circle at 80% 20%, rgba(240, 120, 36, 0.25) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(107, 33, 168, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(228, 248, 56, 0.3) 0%, transparent 60%);
+        }
+
+        /* Bold Retro Border & Shadow Styles */
+        .bold-retro-border {
+            border: 2.5px solid #111111;
+            box-shadow: 5px 5px 0px #111111;
+        }
+        .bold-retro-border-orange {
+            border: 2.5px solid #111111;
+            box-shadow: 5px 5px 0px #F07824;
+        }
+        .bold-retro-border-purple {
+            border: 2.5px solid #111111;
+            box-shadow: 5px 5px 0px #6B21A8;
+        }
+
+        .bold-retro-btn {
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bold-retro-btn:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0px #111111;
+        }
+        .bold-retro-btn:active {
+            transform: translate(1px, 1px);
+            box-shadow: 2px 2px 0px #111111;
+        }
+
+        /* Strike-through and Special Typography Accents from Image 1 */
+        .strike-through-accent {
+            position: relative;
+            display: inline-block;
+        }
+        .strike-through-accent::after {
+            content: '';
+            position: absolute;
+            left: -2%;
+            top: 50%;
+            width: 104%;
+            height: 4px;
+            background-color: #111111;
+            transform: translateY(-50%) rotate(-1deg);
+        }
+
+        .circled-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.2em;
+            height: 1.2em;
+            border: 2px solid #111111;
+            border-radius: 50%;
+            font-size: 0.85em;
+            line-height: 1;
+            margin: 0 1px;
+            font-weight: 800;
+        }
+
+        /* Editorial Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        .animate-ticker {
+            display: flex;
+            width: 200%;
+            animation: ticker 25s linear infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Quick Emergency Bar -->
+    <aside aria-label="긴급 상담 및 지원 안내 바" class="bg-brand-dark text-white py-2.5 px-4 text-xs md:text-sm font-bold flex justify-between items-center z-50 relative border-b-2 border-brand-dark">
+        <div class="max-w-7xl mx-auto w-full flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="bg-brand-orange text-white text-xs px-2 py-0.5 rounded font-black tracking-wider border border-white">24h / 긴급상담</span>
+                <span>가정폭력·성폭력 <strong>031-468-1366</strong> / <strong>031-466-1366</strong></span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-4 text-xs">
+                <span class="text-brand-acidLime font-bold">★ 비밀보장 무료상담</span>
+                <a href="tel:0314681366" class="underline hover:text-brand-orange font-black">바로 전화걸기 →</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-brand-bg/95 backdrop-blur-md border-b-2 border-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Official Logo (Recreated from image 2) -->
+            <a href="#" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-brand-orange rounded-lg p-1">
+                <div class="flex items-center gap-2">
+                    <!-- Custom SVG Symbol matched to logo font style -->
+                    <svg class="h-8 sm:h-9 w-auto" viewBox="0 0 380 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="(사)안양여성의전화 로고">
+                        <!-- Custom Stylized Bold Logo Representation matching the reference image -->
+                        <g fill="#111111">
+                            <!-- Symbol / Logo Icon -->
+                            <path d="M 0,10 L 25,10 L 25,60 L 0,60 Z M 12,10 L 12,60 M 25,10 L 38,10 L 38,60 L 25,60 Z" stroke="#111111" stroke-width="4" fill="#111111"/>
+                            <!-- "안양여성의전화" Bold Shadowed Typography Graphic -->
+                            <text x="48" y="52" font-family="'Black Han Sans', 'Gothic A1', sans-serif" font-weight="900" font-size="46" letter-spacing="-1">안양여성의전화</text>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden lg:flex items-center space-x-7 text-base font-extrabold text-brand-dark tracking-tight">
+                <a href="#about" class="hover:text-brand-purple transition-colors">단체소개</a>
+                <a href="#affiliates" class="hover:text-brand-purple transition-colors">부설기관</a>
+                <a href="#projects" class="hover:text-brand-purple transition-colors">주요사업</a>
+                <a href="#news" class="hover:text-brand-purple transition-colors">새소식</a>
+                <a href="#support" class="hover:text-brand-purple transition-colors">후원·참여</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <button onclick="openModal('counsel-modal')" class="bg-brand-orange text-white px-4 py-2.5 rounded-xl font-black text-sm border-2 border-brand-dark shadow-[3px_3px_0px_#111111] bold-retro-btn flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    상담 및 지원 안내
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 text-brand-dark rounded-xl border-2 border-brand-dark focus:outline-none" aria-label="메뉴 열기/닫기">
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-brand-dark bg-brand-bg px-5 pt-4 pb-6 space-y-3 font-extrabold text-lg">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-brand-dark hover:text-brand-purple">단체소개</a>
+            <a href="#affiliates" onclick="toggleMobileMenu()" class="block py-2 text-brand-dark hover:text-brand-purple">부설기관</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block py-2 text-brand-dark hover:text-brand-purple">주요사업</a>
+            <a href="#news" onclick="toggleMobileMenu()" class="block py-2 text-brand-dark hover:text-brand-purple">새소식</a>
+            <a href="#support" onclick="toggleMobileMenu()" class="block py-2 text-brand-dark hover:text-brand-purple">후원·참여</a>
+            <div class="pt-3 border-t-2 border-brand-dark">
+                <button onclick="toggleMobileMenu(); openModal('counsel-modal')" class="w-full text-center bg-brand-orange text-white py-3.5 rounded-xl font-black border-2 border-brand-dark shadow-[4px_4px_0px_#111111]">
+                    상담 및 지원 안내
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Main Hero Section (Inspired by Graphic 1: Bold Typography, Gradient backdrop, Striking layout) -->
+        <section class="relative editorial-hero-bg editorial-mesh pt-12 pb-20 md:pt-20 md:pb-28 border-b-2 border-brand-dark overflow-hidden">
+            
+            <!-- Floating Decorative Typography Badges (Reference Style) -->
+            <div class="absolute top-6 right-6 hidden md:flex flex-col items-end opacity-90 pointer-events-none font-editorial">
+                <span class="text-xs font-black tracking-widest text-brand-purple uppercase">☆ HOW WE WORK TOGETHER</span>
+                <span class="text-xs font-mono font-bold text-brand-dark">awhl96@hanmail.net</span>
+                <span class="text-xs font-mono font-bold text-brand-orange">☎ 031-442-5385</span>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl">
+                    
+                    <!-- Top Tag & Statement -->
+                    <div class="inline-flex items-center gap-2 bg-brand-dark text-white border-2 border-brand-dark px-3.5 py-1.5 rounded-full mb-8 font-extrabold text-xs md:text-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-acidLime animate-ping"></span>
+                        <span class="tracking-wide">성평등한 일상을 만드는 여성인권운동단체</span>
+                    </div>
+
+                    <!-- Main Bold Graphic Typography (Key Concept from Image 1) -->
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-brand-dark leading-[0.95] tracking-tight mb-8">
+                        여성폭력 없는 <br/>
+                        <span class="text-brand-purple">일상<span class="circled-num">①</span><span class="circled-num">⑨</span></span>
+                        <span class="text-brand-orange">.</span>
+                    </h1>
+
+                    <!-- Strike-through Manifesto Sentence (Direct Editorial Design Element from Image 1) -->
+                    <div class="bg-white/90 p-6 rounded-2xl border-2 border-brand-dark shadow-[6px_6px_0px_#111111] mb-10 max-w-3xl">
+                        <p class="text-lg sm:text-2xl font-black text-brand-dark leading-snug">
+                            차별과 폭력은 여성의 일상을 <span class="strike-through-accent">멈추게 만들 수 있지만</span>, 
+                            성평등을 향한 우리의 연대와 변화의 움직임은 결코 멈추지 않습니다 <span class="text-brand-orange">♥</span>
+                        </p>
+                    </div>
+
+                    <p class="text-base sm:text-xl text-brand-dark font-extrabold mb-10 leading-relaxed max-w-2xl bg-brand-acidLime/60 p-3 rounded-lg border border-brand-dark inline-block">
+                        모든 여성의 인권이 존중받는 사회를 향해. 안양여성의전화가 늘 함께합니다.
+                    </p>
+
+                    <!-- CTA Group -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openModal('counsel-modal')" class="bg-brand-orange text-white text-lg font-black px-8 py-4 rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#111111] bold-retro-btn flex items-center justify-center gap-3">
+                            <span>상담 및 지원 안내</span>
+                            <span class="bg-white text-brand-orange rounded-full w-6 h-6 flex items-center justify-center text-sm font-black">→</span>
+                        </button>
+                        <a href="#projects" class="bg-white text-brand-dark text-lg font-black px-8 py-4 rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#111111] bold-retro-btn text-center">
+                            우리의 활동 보기
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Continuous Ticker Bar -->
+        <div class="bg-brand-acidLime border-b-2 border-brand-dark py-3 overflow-hidden font-black text-sm tracking-widest uppercase text-brand-dark">
+            <div class="animate-ticker whitespace-nowrap flex gap-8">
+                <span>★ 여성폭력 상담 031-468-1366 ★ 가정폭력·성폭력 통합상담소 ★ 디지털성범죄 피해지원센터 ★ 가정폭력 피해자 보호시설 ★ 성평등 교육 & 여성인권 영화제</span>
+                <span>★ 여성폭력 상담 031-468-1366 ★ 가정폭력·성폭력 통합상담소 ★ 디지털성범죄 피해지원센터 ★ 가정폭력 피해자 보호시설 ★ 성평등 교육 & 여성인권 영화제</span>
+            </div>
+        </div>
+
+        <!-- Quick Access Shortcuts Section -->
+        <section class="py-16 bg-white border-b-2 border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="sr-only">주요 서비스 바로가기</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Shortcut 1: Highlighted Counsel -->
+                    <div class="bg-brand-lightOrange p-6 rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#F07824] flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+                        <div>
+                            <div class="w-12 h-12 bg-brand-orange text-white rounded-xl border-2 border-brand-dark flex items-center justify-center mb-4 font-black text-xl shadow-[2px_2px_0px_#111111]">
+                                01
+                            </div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">상담이 필요해요</h3>
+                            <p class="text-xs sm:text-sm font-semibold text-brand-gray mb-6">가정폭력·성폭력, 디지털 성범죄 피해 등 비밀 보장 전문 상담을 지원합니다.</p>
+                        </div>
+                        <button onclick="openModal('counsel-modal')" class="w-full bg-brand-orange text-white font-black py-3 px-4 rounded-xl border-2 border-brand-dark shadow-[2px_2px_0px_#111111] hover:bg-opacity-95 transition-all text-center text-sm">
+                            상담 신청 및 안내 →
+                        </button>
+                    </div>
+
+                    <!-- Shortcut 2: Victim Support -->
+                    <div class="bg-brand-bg p-6 rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#111111] flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+                        <div>
+                            <div class="w-12 h-12 bg-brand-purple text-white rounded-xl border-2 border-brand-dark flex items-center justify-center mb-4 font-black text-xl shadow-[2px_2px_0px_#111111]">
+                                02
+                            </div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">여성폭력 피해자 지원</h3>
+                            <p class="text-xs sm:text-sm font-semibold text-brand-gray mb-6">의료·법률 지원 연계 및 긴급 보호시설 조성을 제공합니다.</p>
+                        </div>
+                        <a href="#affiliates" class="w-full bg-white text-brand-dark font-black py-3 px-4 rounded-xl border-2 border-brand-dark shadow-[2px_2px_0px_#111111] hover:bg-gray-50 transition-all text-center text-sm block">
+                            지원체계 보기 →
+                        </a>
+                    </div>
+
+                    <!-- Shortcut 3: Education & Campaign -->
+                    <div class="bg-brand-bg p-6 rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#111111] flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+                        <div>
+                            <div class="w-12 h-12 bg-brand-dark text-white rounded-xl border-2 border-brand-dark flex items-center justify-center mb-4 font-black text-xl shadow-[2px_2px_0px_#111111]">
+                                03
+                            </div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">교육 및 캠페인</h3>
+                            <p class="text-xs sm:text-sm font-semibold text-brand-gray mb-6">성평등·성교육, 인권강사 양성 및 여성인권 영화제를 진행합니다.</p>
+                        </div>
+                        <a href="#projects" class="w-full bg-white text-brand-dark font-black py-3 px-4 rounded-xl border-2 border-brand-dark shadow-[2px_2px_0px_#111111] hover:bg-gray-50 transition-all text-center text-sm block">
+                            교육·캠페인 확인 →
+                        </a>
+                    </div>
+
+                    <!-- Shortcut 4: Support & Membership -->
+                    <div class="bg-brand-bg p-6 rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#111111] flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+                        <div>
+                            <div class="w-12 h-12 bg-white text-brand-purple border-2 border-brand-dark rounded-xl flex items-center justify-center mb-4 font-black text-xl shadow-[2px_2px_0px_#111111]">
+                                04
+                            </div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">후원·회원·자원봉사</h3>
+                            <p class="text-xs sm:text-sm font-semibold text-brand-gray mb-6">성평등한 사회를 향한 지속 가능한 연대와 변화에 참여해주세요.</p>
+                        </div>
+                        <a href="#support" class="w-full bg-brand-purple text-white font-black py-3 px-4 rounded-xl border-2 border-brand-dark shadow-[2px_2px_0px_#111111] hover:bg-opacity-90 transition-all text-center text-sm block">
+                            참여 방법 안내 →
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: About Organization -->
+        <section id="about" class="py-20 bg-brand-bg border-b-2 border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7">
+                        <div class="inline-block bg-brand-purple text-white px-3.5 py-1 rounded-md font-black text-xs mb-4 uppercase tracking-widest border border-brand-dark">
+                            ABOUT US
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mb-6 leading-tight">
+                            여성의 인권과<br/>
+                            <span class="text-brand-purple">성평등한 일상</span>을 위해
+                        </h2>
+                        <div class="space-y-4 text-base sm:text-lg font-bold text-brand-gray leading-relaxed mb-8">
+                            <p>
+                                <strong>안양여성의전화</strong>는 여성에 대한 모든 폭력에 대응하고, 여성의 인권과 존엄이 존중받는 사회를 만들기 위해 활동하는 여성인권운동단체입니다.
+                            </p>
+                            <p>
+                                여성이 정치·경제·사회·문화 등 모든 영역에 주체적으로 참여하는 민주사회를 목적으로 하며, 전문 상담과 피해자 지원, 성평등 교육, 여성인권 캠페인과 지역사회 연대를 지속합니다.
+                            </p>
+                        </div>
+
+                        <div class="p-6 bg-white rounded-2xl border-2 border-brand-dark shadow-[5px_5px_0px_#111111] space-y-3">
+                            <h3 class="font-black text-brand-dark text-lg flex items-center gap-2">
+                                <span class="w-3.5 h-3.5 rounded-full bg-brand-orange border border-brand-dark"></span>
+                                활동 가치 & 정체성
+                            </h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-extrabold text-sm text-brand-dark">
+                                <li class="flex items-center gap-2">✓ 여성주의 상담 및 인권옹호</li>
+                                <li class="flex items-center gap-2">✓ 피해자의 자기결정권 존중</li>
+                                <li class="flex items-center gap-2">✓ 지역사회 폭력예방 네트워크</li>
+                                <li class="flex items-center gap-2">✓ 지속 가능한 성평등 교육</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Visual Accent Graphic Banner -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-brand-purple text-white p-8 sm:p-10 rounded-3xl border-2 border-brand-dark shadow-[8px_8px_0px_#111111] relative overflow-hidden">
+                            <div class="text-xs font-black uppercase tracking-widest text-brand-acidLime mb-3">Our Core Mission</div>
+                            <p class="text-2xl sm:text-3xl font-black leading-snug mb-8">
+                                "모든 폭력으로부터 자유로운 세상, 연대하여 함께 만들어갑니다."
+                            </p>
+                            
+                            <div class="space-y-4 text-sm font-bold border-t-2 border-white/30 pt-6">
+                                <div class="flex justify-between items-center">
+                                    <span>설립 목적</span>
+                                    <span class="text-brand-lightOrange">여성인권 보호 및 성평등 실현</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>주요 대상</span>
+                                    <span class="text-brand-lightOrange">폭력 피해 여성 및 지역 주민</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>활동 영역</span>
+                                    <span class="text-brand-lightOrange">안양 및 인근 지역사회</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Counseling & Support Affiliates -->
+        <section id="affiliates" class="py-20 bg-white border-b-2 border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-orange font-black text-xs tracking-widest uppercase bg-brand-lightOrange border border-brand-orange px-3 py-1 rounded-full">Counseling & Support</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mt-3 mb-4">
+                        혼자 감당하지 않아도 됩니다.<br/>필요한 지원을 함께 찾아갑니다.
+                    </h2>
+                    <p class="text-base sm:text-lg text-brand-gray font-bold">
+                        피해자의 선택과 자기결정권을 존중하며, 비밀을 보장하는 안전한 지원체계를 운영합니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Integrated Counseling Center -->
+                    <div class="bg-brand-bg p-8 rounded-2xl border-2 border-brand-dark shadow-[6px_6px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-brand-purple text-white rounded-xl border-2 border-brand-dark flex items-center justify-center mb-6 shadow-[2px_2px_0px_#111111]">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-brand-dark mb-3">가정폭력·성폭력<br/>통합상담소</h3>
+                            <p class="text-brand-gray font-semibold text-sm leading-relaxed mb-6">
+                                가정폭력 및 성폭력 피해에 대해 전문가가 심층 상담을 진행하며, 의료·법률 지원 정보를 안전하게 안내합니다.
+                            </p>
+                        </div>
+                        <button onclick="openCounselDetail('integrated')" class="w-full bg-white text-brand-dark font-black py-3 rounded-xl border-2 border-brand-dark shadow-[3px_3px_0px_#111111] hover:bg-brand-lightOrange transition-all text-center">
+                            상담 안내 보기
+                        </button>
+                    </div>
+
+                    <!-- Card 2: Digital Sex Crime Support Center -->
+                    <div class="bg-brand-bg p-8 rounded-2xl border-2 border-brand-dark shadow-[6px_6px_0px_#F07824] flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-brand-orange text-white rounded-xl border-2 border-brand-dark flex items-center justify-center mb-6 shadow-[2px_2px_0px_#111111]">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-brand-dark mb-3">안양디지털성범죄<br/>피해지원센터</h3>
+                            <p class="text-brand-gray font-semibold text-sm leading-relaxed mb-6">
+                                불법 촬영, 유포 피해, 온라인 성희롱 등 디지털 성범죄 피해에 대한 상담 및 삭제 지원·모니터링 안내를 제공합니다.
+                            </p>
+                        </div>
+                        <button onclick="openCounselDetail('digital')" class="w-full bg-brand-orange text-white font-black py-3 rounded-xl border-2 border-brand-dark shadow-[3px_3px_0px_#111111] hover:opacity-95 transition-all text-center">
+                            피해 지원 안내
+                        </button>
+                    </div>
+
+                    <!-- Card 3: Shelter for Victims -->
+                    <div class="bg-brand-bg p-8 rounded-2xl border-2 border-brand-dark shadow-[6px_6px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-brand-dark text-white rounded-xl border-2 border-brand-dark flex items-center justify-center mb-6 shadow-[2px_2px_0px_#111111]">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 00-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-brand-dark mb-3">가정폭력 피해자<br/>보호시설 (쉼터)</h3>
+                            <p class="text-brand-gray font-semibold text-sm leading-relaxed mb-6">
+                                폭력 피해자가 자녀와 함께 긴급 안전을 확보하고 자립을 준비할 수 있도록 숙식 및 보호 지원을 제공합니다. (위치 비공개)
+                            </p>
+                        </div>
+                        <button onclick="openCounselDetail('shelter')" class="w-full bg-white text-brand-dark font-black py-3 rounded-xl border-2 border-brand-dark shadow-[3px_3px_0px_#111111] hover:bg-brand-lightOrange transition-all text-center">
+                            보호 지원 안내
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 6: Key Projects and Activities -->
+        <section id="projects" class="py-20 bg-brand-bg border-b-2 border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-brand-purple font-black text-xs tracking-widest uppercase">Our Work</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mt-1">
+                            일상의 변화를 만드는 여성인권 활동
+                        </h2>
+                    </div>
+                    <p class="text-brand-gray font-extrabold text-base mt-3 md:mt-0 max-w-md">
+                        지역사회 현장에서 여성 폭력 예방과 성평등 실현을 위해 전개하는 주요 사업을 소개합니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Activity 1 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="h-2.5 bg-brand-purple rounded-full mb-4"></div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">여성주의 상담 및 피해자 인권지원</h3>
+                            <p class="text-sm text-brand-gray font-semibold leading-relaxed mb-4">
+                                통찰과 치유, 자기 권율을 높이는 여성주의 상담을 실시하고 수사·재판 과정에서의 인권 옹호 조력을 제공합니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-black text-brand-purple">#상담 #인권지원</span>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="h-2.5 bg-brand-orange rounded-full mb-4"></div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">성평등·성교육·여성폭력 예방교육</h3>
+                            <p class="text-sm text-brand-gray font-semibold leading-relaxed mb-4">
+                                청소년, 시민, 기관 및 단체를 대상으로 맞춤형 성평등 교육과 폭력 예방 맞춤 프로그램을 운영합니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-black text-brand-orange">#성평등교육 #폭력예방</span>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="h-2.5 bg-brand-dark rounded-full mb-4"></div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">인권강사 양성 및 교육 활동</h3>
+                            <p class="text-sm text-brand-gray font-semibold leading-relaxed mb-4">
+                                성평등 및 여성인권의 가치를 현장에서 확산할 전문 인권강사 양성과정을 정기적으로 운영합니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-black text-brand-dark">#강사양성 #역량강화</span>
+                    </div>
+
+                    <!-- Activity 4 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="h-2.5 bg-brand-orange rounded-full mb-4"></div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">여성인권 캠페인</h3>
+                            <p class="text-sm text-brand-gray font-semibold leading-relaxed mb-4">
+                                세계여성의날, 성폭력/가정폭력 추방주간 등 주요 계기별 거리 캠페인과 온라인 성인권 촉구 활동을 전개합니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-black text-brand-orange">#캠페인 #시민연대</span>
+                    </div>
+
+                    <!-- Activity 5 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="h-2.5 bg-brand-purple rounded-full mb-4"></div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">안양여성인권영화제</h3>
+                            <p class="text-sm text-brand-gray font-semibold leading-relaxed mb-4">
+                                영화라는 매체를 통해 다양한 여성의 삶과 인권 이슈를 지역사회와 함께 공유하고 소통하는 문화사업입니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-black text-brand-purple">#영화제 #문화운동</span>
+                    </div>
+
+                    <!-- Activity 6 -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+                        <div>
+                            <div class="h-2.5 bg-brand-dark rounded-full mb-4"></div>
+                            <h3 class="text-xl font-black text-brand-dark mb-2">지역사회 연대 및 회원 참여</h3>
+                            <p class="text-sm text-brand-gray font-semibold leading-relaxed mb-4">
+                                안양 지역 시민사회 연대 활동과 회원 소모임, 자원활동을 통해 여성운동의 주체적 참여 기반을 넓힙니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-black text-brand-dark">#지역연대 #회원소모임</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Latest News -->
+        <section id="news" class="py-20 bg-white border-b-2 border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-10">
+                    <div>
+                        <span class="text-brand-orange font-black text-xs tracking-widest uppercase">Community</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark tracking-tight">
+                            안양여성의전화의 새로운 소식
+                        </h2>
+                    </div>
+                    <a href="http://anyanghotline.or.kr" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1 font-black text-sm text-brand-purple hover:underline">
+                        공식 홈페이지 게시판 이동 →
+                    </a>
+                </div>
+
+                <div class="bg-brand-bg rounded-2xl border-2 border-brand-dark shadow-[6px_6px_0px_#111111] overflow-hidden">
+                    <div class="p-6 border-b-2 border-brand-dark bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-brand-purple text-white text-xs font-black rounded-full border border-brand-dark">공지사항</span>
+                            <span class="px-3 py-1 bg-brand-lightOrange text-brand-orange text-xs font-black rounded-full border border-brand-orange">활동 소식</span>
+                        </div>
+                        <p class="text-xs text-brand-gray font-extrabold">
+                            ※ 최신 공지사항 및 뉴스레터는 공식 홈페이지 게시판을 통해 확인하실 수 있습니다.
+                        </p>
+                    </div>
+
+                    <div class="p-10 text-center space-y-4">
+                        <svg class="w-12 h-12 text-brand-purple mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                        <h3 class="text-2xl font-black text-brand-dark">안양여성의전화 활동소식 및 공지사항</h3>
+                        <p class="text-sm text-brand-gray max-w-md mx-auto font-bold">
+                            영화제 일정, 강사양성과정 모집, 시민강좌 등 최신 사업 정보는 공식 웹사이트의 커뮤니티 공간에 게시됩니다.
+                        </p>
+                        <div class="pt-2">
+                            <a href="http://anyanghotline.or.kr" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-purple text-white font-black px-6 py-3 rounded-xl border-2 border-brand-dark shadow-[3px_3px_0px_#111111] hover:bg-opacity-90 transition-all text-sm">
+                                공식 게시판 바로가기 ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Support & Participation -->
+        <section id="support" class="py-20 bg-brand-lightOrange border-b-2 border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white p-8 md:p-14 rounded-3xl border-2 border-brand-dark shadow-[8px_8px_0px_#111111] text-center max-w-4xl mx-auto">
+                    
+                    <span class="bg-brand-orange text-white text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-widest mb-4 inline-block border border-brand-dark">
+                        JOIN & DONATE
+                    </span>
+                    
+                    <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mb-6 leading-tight">
+                        함께할 때 변화는 계속됩니다<span class="text-brand-orange">.</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-brand-gray font-extrabold max-w-2xl mx-auto mb-10 leading-relaxed">
+                        여성폭력 없는 일상과 성평등한 사회를 위한 활동에 함께해 주세요.<br/>
+                        회원 참여와 후원, 자원봉사는 여성인권 활동을 지속 가능하게 만드는 든든한 힘이 됩니다.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <a href="https://secure.donus.org/awhl/mypage" target="_blank" rel="noopener noreferrer" class="bg-brand-orange text-white text-lg font-black py-4 px-6 rounded-xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] bold-retro-btn flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+                            후원하기
+                        </a>
+                        
+                        <a href="http://anyanghotline.or.kr" target="_blank" rel="noopener noreferrer" class="bg-brand-purple text-white text-lg font-black py-4 px-6 rounded-xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] bold-retro-btn flex items-center justify-center gap-2">
+                            회원가입 안내
+                        </a>
+
+                        <button onclick="openModal('volunteer-modal')" class="bg-white text-brand-dark text-lg font-black py-4 px-6 rounded-xl border-2 border-brand-dark shadow-[4px_4px_0px_#111111] bold-retro-btn flex items-center justify-center gap-2">
+                            자원봉사 참여
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-brand-gray font-black mt-6">
+                        ※ (사)안양여성의전화는 지정기부금 단체로서 후원금에 대해 연말정산 기부금 영수증이 발급됩니다.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-dark text-white pt-14 pb-10 border-t-2 border-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-gray-800">
+                
+                <!-- Organization Branding -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-white tracking-tight">(사)안양여성의전화</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed font-semibold">
+                        모든 폭력으로부터 여성의 인권을 보호하고, 가정·직장·사회에서의 성평등 실현을 위해 활동하는 여성인권운동단체입니다.
+                    </p>
+                    <div class="text-xs text-gray-400 font-bold space-y-1">
+                        <p>고유번호 : 138-82-06101</p>
+                    </div>
+                </div>
+
+                <!-- Contact Official Info -->
+                <div class="lg:col-span-4 space-y-2 text-sm text-gray-300 font-semibold">
+                    <h3 class="text-white font-black text-base mb-3 text-brand-orange">기관 정보 & 오시는 길</h3>
+                    <p><strong>주소 :</strong> (우 14092) 경기도 안양시 만안구 안양로 149, 5층 (안양동, 샤인빌딩)</p>
+                    <p><strong>대표전화 :</strong> 031-442-5385 | <strong>팩스 :</strong> 031-441-4386</p>
+                    <p><strong>상담전화 :</strong> 031-468-1366 / 031-466-1366</p>
+                    <p><strong>이메일 :</strong> awhl96@hanmail.net</p>
+                    <p><strong>운영시간 :</strong> 평일 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00)</p>
+                </div>
+
+                <!-- Quick Links & Policy -->
+                <div class="lg:col-span-3 space-y-3 text-sm font-bold">
+                    <h3 class="text-white font-black text-base mb-3 text-brand-orange">관련 링크</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="http://anyanghotline.or.kr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">공식 웹사이트 ↗</a></li>
+                        <li><a href="https://hotline.or.kr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">한국여성의전화 ↗</a></li>
+                        <li><button onclick="openModal('privacy-modal')" class="text-left hover:text-white transition-colors underline">개인정보처리방침</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 font-bold gap-4">
+                <p>© (사)안양여성의전화 (Anyang Women's Hotline). All rights reserved.</p>
+                <p>여성폭력 긴급 상담 전화: 1366 (24시간 가능)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal 1: Quick Counseling & Support Route Modal -->
+    <div id="counsel-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl border-2 border-brand-dark shadow-[8px_8px_0px_#111111] max-w-xl w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('counsel-modal')" class="absolute top-4 right-4 text-brand-dark p-2 font-black text-xl hover:text-brand-orange" aria-label="닫기">✕</button>
+            
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-brand-orange text-white text-xs font-black px-2 py-0.5 rounded">비밀보장</span>
+                <span class="text-xs font-black text-brand-purple">무료 상담 지원</span>
+            </div>
+
+            <h3 class="text-2xl font-black text-brand-dark mb-4">상담 및 피해 지원 안내</h3>
+            <p class="text-sm text-brand-gray font-semibold mb-6">
+                안양여성의전화는 모든 상담 내용을 철저히 비밀로 유지하며, 내담자의 의사를 최우선으로 존중합니다.
+            </p>
+
+            <div class="space-y-4">
+                <div class="p-4 bg-brand-lightOrange rounded-xl border-2 border-brand-orange">
+                    <h4 class="font-black text-brand-dark text-base mb-1">📞 전화 상담</h4>
+                    <p class="text-sm font-black text-brand-orange text-lg">031-468-1366 / 031-466-1366</p>
+                    <p class="text-xs text-brand-gray font-bold mt-1">평일 09:00 ~ 18:00 (점심시간 12:00~13:00 제외)</p>
+                </div>
+
+                <div class="p-4 bg-brand-bg rounded-xl border-2 border-brand-dark">
+                    <h4 class="font-black text-brand-dark text-base mb-1">🏢 면접(대면) 상담</h4>
+                    <p class="text-xs text-brand-gray font-bold mb-2">전화 예약을 통해 안전한 공간에서 대면 상담을 진행합니다.</p>
+                    <p class="text-xs text-brand-dark font-black">주소: 경기도 안양시 만안구 안양로 149, 5층 샤인빌딩</p>
+                </div>
+
+                <div class="p-4 bg-brand-bg rounded-xl border-2 border-brand-dark">
+                    <h4 class="font-black text-brand-dark text-base mb-1">🚨 야간 및 24시간 긴급 상담</h4>
+                    <p class="text-xs text-brand-gray font-bold">여성긴급전화 <strong>1366</strong> (국번없이 1366, 24시간 운영)</p>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t-2 border-brand-dark flex justify-end">
+                <button onclick="closeModal('counsel-modal')" class="bg-brand-dark text-white font-black px-6 py-2.5 rounded-lg border-2 border-brand-dark text-sm">
+                    확인 및 닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Affiliated Center Detail Modal -->
+    <div id="affiliate-detail-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl border-2 border-brand-dark shadow-[8px_8px_0px_#111111] max-w-lg w-full p-6 sm:p-8 relative">
+            <button onclick="closeModal('affiliate-detail-modal')" class="absolute top-4 right-4 text-brand-dark p-2 font-black text-xl hover:text-brand-orange" aria-label="닫기">✕</button>
+            
+            <div id="affiliate-modal-content">
+                <!-- Dynamically populated by JS -->
+            </div>
+
+            <div class="mt-6 pt-4 border-t-2 border-brand-dark flex justify-end">
+                <button onclick="closeModal('affiliate-detail-modal')" class="bg-brand-dark text-white font-black px-5 py-2 rounded-lg text-sm">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Volunteer Info Modal -->
+    <div id="volunteer-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl border-2 border-brand-dark shadow-[8px_8px_0px_#111111] max-w-lg w-full p-6 sm:p-8 relative">
+            <button onclick="closeModal('volunteer-modal')" class="absolute top-4 right-4 text-brand-dark p-2 font-black text-xl hover:text-brand-orange" aria-label="닫기">✕</button>
+            
+            <h3 class="text-2xl font-black text-brand-dark mb-4">자원봉사 참여 안내</h3>
+            <div class="space-y-3 text-sm text-brand-gray font-bold">
+                <p>안양여성의전화 활동에 온기를 더해주실 자원봉사자를 모집합니다.</p>
+                <div class="p-4 bg-brand-bg rounded-xl border-2 border-brand-dark space-y-2 text-xs">
+                    <p><strong>• 모집 분야:</strong> 행사 진행 지원, 홍보물 디자인, 번역, 행정 지원 등</p>
+                    <p><strong>• 신청 방법:</strong> 전화(031-442-5385) 또는 이메일(awhl96@hanmail.net) 문의</p>
+                    <p><strong>• 혜택:</strong> VMS 봉사시간 인증 및 활동 확인서 발급</p>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t-2 border-brand-dark flex justify-end">
+                <button onclick="closeModal('volunteer-modal')" class="bg-brand-purple text-white font-black px-5 py-2 rounded-lg text-sm">
+                    확인
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl border-2 border-brand-dark shadow-[8px_8px_0px_#111111] max-w-xl w-full p-6 sm:p-8 max-h-[85vh] overflow-y-auto relative text-xs text-brand-gray font-semibold">
+            <button onclick="closeModal('privacy-modal')" class="absolute top-4 right-4 text-brand-dark p-2 font-black text-xl hover:text-brand-orange" aria-label="닫기">✕</button>
+            <h3 class="text-xl font-black text-brand-dark mb-4">개인정보처리방침</h3>
+            <p class="mb-2">(사)안양여성의전화는 이용자의 개인정보를 보호하고 관련 법령을 준수합니다.</p>
+            <p class="mb-2"><strong>1. 개인정보 수집 항목:</strong> 이름, 연락처, 이메일 (상담 및 후원 신청 시)</p>
+            <p class="mb-2"><strong>2. 수집 목적:</strong> 피해자 상담 지원, 후원금 관리 및 기부금 영수증 발급</p>
+            <p class="mb-2"><strong>3. 보유 및 이용 기간:</strong> 법령에 따른 보존 기간 준수 후 지체 없이 파기</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const burger = document.getElementById('hamburger-icon');
+            const close = document.getElementById('close-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                burger.classList.add('hidden');
+                close.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                burger.classList.remove('hidden');
+                close.classList.add('hidden');
+            }
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function openCounselDetail(type) {
+            const contentDiv = document.getElementById('affiliate-modal-content');
+            let content = '';
+
+            if (type === 'integrated') {
+                content = `
+                    <span class="text-xs font-black text-brand-purple">부설기관 상세 안내</span>
+                    <h3 class="text-2xl font-black text-brand-dark mt-1 mb-4">가정폭력·성폭력 통합상담소</h3>
+                    <div class="space-y-3 text-sm text-brand-gray font-bold leading-relaxed">
+                        <p>가정폭력 및 성폭력 피해자가 겪는 통증과 혼란을 공감하며 전문적인 치유 및 인권옹호 과정을 함께합니다.</p>
+                        <div class="p-4 bg-brand-lightOrange rounded-xl border-2 border-brand-orange font-black text-brand-dark">
+                            <p>상담 전화: 031-468-1366 / 031-466-1366</p>
+                            <p class="text-xs text-brand-orange font-extrabold mt-1">상담 시간: 평일 09:00 ~ 18:00 (전화/대면)</p>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-1 text-xs font-bold">
+                            <li>심리상담 및 상담 치료 지원</li>
+                            <li>수사·재판 과정 동석 및 법률 지원 연계</li>
+                            <li>의료기관 연계 및 치료비 지원 안내</li>
+                        </ul>
+                    </div>
+                `;
+            } else if (type === 'digital') {
+                content = `
+                    <span class="text-xs font-black text-brand-orange">부설기관 상세 안내</span>
+                    <h3 class="text-2xl font-black text-brand-dark mt-1 mb-4">안양디지털성범죄피해지원센터</h3>
+                    <div class="space-y-3 text-sm text-brand-gray font-bold leading-relaxed">
+                        <p>불법 촬영, 유포 협박, 합성물 등 디지털 환경에서 발생하는 성범죄 피해에 대해 종합 지원을 시행합니다.</p>
+                        <div class="p-4 bg-brand-lightOrange rounded-xl border-2 border-brand-orange font-black text-brand-dark">
+                            <p>지원 문의: 031-466-1366</p>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-1 text-xs font-bold">
+                            <li>디지털 성범죄 피해 관련 전문 상담</li>
+                            <li>불법 촬영물 삭제 지원 및 모니터링 연계</li>
+                            <li>법률 지원 및 의료비 연계 지원</li>
+                        </ul>
+                    </div>
+                `;
+            } else if (type === 'shelter') {
+                content = `
+                    <span class="text-xs font-black text-brand-dark">부설기관 상세 안내</span>
+                    <h3 class="text-2xl font-black text-brand-dark mt-1 mb-4">가정폭력 피해자 보호시설 (쉼터)</h3>
+                    <div class="space-y-3 text-sm text-brand-gray font-bold leading-relaxed">
+                        <p>폭력 피해 여성과 동반 자녀가 안전하게 머물며 신체적·정신적 안정을 되찾고 자립할 수 있도록 돕는 긴급 보호시설입니다.</p>
+                        <div class="p-3 bg-red-50 border-2 border-red-300 text-red-800 text-xs rounded-lg font-black">
+                            🔒 안전을 위해 시설의 주소 및 위치 정보는 비공개로 운영됩니다. 입소 안내는 전화 상담을 통해 가능합니다.
+                        </div>
+                        <ul class="list-disc pl-5 space-y-1 text-xs font-bold">
+                            <li>의식주 및 임시 숙식 제공</li>
+                            <li>자립을 위한 교육 및 취업 정보 연결</li>
+                            <li>동반 자녀 학업 및 상담 지원</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            contentDiv.innerHTML = content;
+            openModal('affiliate-detail-modal');
+        }
+    </script>
+</body>
+</html>
